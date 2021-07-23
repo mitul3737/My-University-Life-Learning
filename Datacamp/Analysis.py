@@ -1,1 +1,1 @@
-print("Hello "+input("What is your name?"))
+print(3*3+3/3-3)
