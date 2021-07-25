@@ -26,11 +26,11 @@ print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
 
 #https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
-val_1=input("You want to go Left or Right? L or R\n")
+val_1=input("You want to go Left or Right? L or R")
 if val_1=='L':
-  val_2=input("You want to swim or wait?S or W\n")
+  val_2=input("You want to swim or wait?S or W")
   if val_2=='W':
-    val_3=input("There are 3 doors and you can choose one . Which door will you choose? Red or Blue or Yellow? R or B or Y\n")
+    val_3=input("There are 3 doors and you can choose one . Which door will you choose? Red or Blue or Yellow? R or B or Y")
     if val_3=='Y':
       print("Congratulations! You have won this game and we will be shipping all of these tressures as swags in your dreams . Now wake up from dream and start working to get some money !!")
     else:
