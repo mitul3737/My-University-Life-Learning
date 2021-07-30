@@ -1,3 +1,4 @@
+#Link: https://replit.com/@appbrewery/rock-paper-scissors-start
 import random
 
 rock = '''
@@ -30,16 +31,16 @@ scissors = '''
 print("What do you choose? Type  0 for Rock, 1 for Paper oro 2 for Scissors")
 num = int(input(""))
 if num == 0:
-    print(f"You chose: {rock}")
+    print(rock)
 elif num == 1:
-    print(f"You chose: +{paper}")
+    print(paper)
 else:
-    print(f"You chose: {scissors}")
+    print(scissors)
 
 num2 = random.randint(0, 2)
 
 if num2 == 0:
-    print(f"Computer chose: {rock}")
+    print(rock)
     if num2 == num:
         print("Match Draw")
     elif num == 1:
@@ -48,7 +49,7 @@ if num2 == 0:
         print("You lose")
 
 if num2 == 1:
-    print(f"Computer chose: {paper}")
+    print(paper)
     if num2 == num:
         print("Match Draw")
     elif num == 2:
@@ -57,7 +58,7 @@ if num2 == 1:
         print("You lose")
 
 if num2 == 2:
-    print(f"Computer chose: {scissors}")
+    print(scissors)
     if num2 == num:
         print("Match Draw")
     elif num == 0:
