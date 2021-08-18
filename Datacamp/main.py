@@ -1,8 +1,16 @@
-def make_square(tup):
-    val,val_0=tup
-    val_1={}
-    for i in range(val,val_0+1):
-        val_1[i]=i*i
-    print(val_1)
-    return " "
-print(make_square((1,3)))
+# todo
+def function_name(val_1, loc="Dhanmondi"):
+    val_0 = {"Rice": 105, "Potato": 20, "Chicken": 250, "Beef": 510, "Oil": 85}
+    total = 0
+    for i in val_1:
+        if i in val_0.keys():
+            total += val_0[i]
+    if loc != "Dhanmondi":
+        total += 70
+    elif loc == "Dhanmondi":
+        total += 30
+
+    print(total)
+
+
+function_name(["Rice", "Beef", "Rice"], "Mohakhali")
