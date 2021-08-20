@@ -1,13 +1,12 @@
-
 def foo_moo(val_1):
     if val_1%2==0 and val_1%3==0:
-        print('"FooMoo"')
+        val_0="FooMoo"
     elif val_1%2==0:
-        print('"Foo"')
+         val_0="Foo"
     elif val_1%3==0:
-         print('"Moo"')
+          val_0="Moo"
     else:
-         print('"Boo"')
+         val_0="Boo"
 
-    return " "
-print(foo_moo(int(input(""))))
+    return val_0
+print(foo_moo(2))
