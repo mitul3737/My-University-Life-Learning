@@ -1,4 +1,3 @@
-
 list_1=[7,5,4,2]
 
 for i in range(len(list_1)):
