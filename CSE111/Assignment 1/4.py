@@ -1,7 +1,7 @@
-str_0=input("")
+inp=input("")
 try:
-    if str_0.index("too good")>0:
-        new_str=str_0.replace("too good","excellent")
+    if inp.index("too good")>0:
+        new_str=inp.replace("too good","excellent",1)
         print(new_str)
 except:
-    print(str_0)
+    print(inp)

@@ -27,6 +27,8 @@ try:
 
     if count_0 == len(lst_n[0]):
         print("Those strings are anagrams.")
+    else:
+        print("Those strings are not anagrams.")
 except:
     print("Those strings are not anagrams.")
 

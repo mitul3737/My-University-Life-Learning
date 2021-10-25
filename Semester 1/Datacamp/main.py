@@ -1,30 +1,33 @@
-dict_0={}
 lst_1=[]
+dict_0={}
 lst_0=[]
-for i in range(0,2):
-    str_0=input("").split(", ")
-    lst_0.append(str_0)
-str_lst=[]
-tup=()
-for i in lst_0:
-    for j in i:
-        str_1= j.split(": ")
-        if str_1[0] not in dict_0.keys():
-              dict_0[str_1[0]]=int(str_1[1])
-        else:
-            dict_0[str_1[0]] += int(str_1[1])
+lst_n=[]
+count_0=0
+try:
+    for i in range(0, 2):
+        str_0 = input("")
+        lst_n.append(str_0)
 
-print(dict_0)
+    for i in lst_n:
+        for j in i:
+            if j not in dict_0.keys():
+                lst_0 = [i.index(j)]
+                dict_0[j] = lst_0
+            else:
+                dict_0[j].append(i.index(j))
+            lst_0 = []
 
-for b in dict_0.keys():
-    if dict_0[b] not in str_lst:
-         str_lst.append(dict_0[b])
+    for i in dict_0.keys():
+        if dict_0[i][0] != dict_0[i][1]:
+            lst_1.append("OK")
 
-str_lst=sorted(str_lst)
+    for l in lst_1:
+        if l == 'OK':
+            count_0 += 1
 
-
-for e in str_lst:
-    tup_1=(e,)
-    tup+=tup_1
-
-print(f"Values: {tup}")
+    if count_0 == len(lst_n[0]):
+        print("Those strings are anagrams.")
+    else:
+        print("Those strings are not anagrams.")
+except:
+    print("Those strings are not anagrams.")
