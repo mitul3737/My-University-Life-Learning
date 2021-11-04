@@ -1,23 +1,26 @@
-mit_0=input("").strip(")(").split(",")
-str_3=mit_0[0]
-print(str_3)
+class Product:
+    def __init__(self,x,y):
+        self._x=x
+        self._y=y
+    def display(self):
+        print(self._x,self._y)
+    @property #to get any value using this method written  a variable ex: object.method or, p.value not like p.value()
+    def value(self):
+        return self._x
 
-def vowel_count(name):
-    list_0=['a','e','i','o','u']
-    str_0=""
-    count_0=0
-    for i in name.lower():
-        if  i in list_0:
-            count_0+=1
-            str_0+=i+", "
-
-    print(str_0)
-
-    if count_0>0:
-        print(f"Vowels: {str_0[:-2]}.Total number of vowels: {count_0}")
-    else:
-        print("No vowels in the name")
+    @value.setter #to set a function to assign value
+    def value(self,val):
 
 
 
-vowel_count(str_3)
+    @property
+    def y(self):
+        return self._y
+    def y(self,val):
+        self._y=val
+
+
+
+
+p=Product(23,24)
+print(p.value)
