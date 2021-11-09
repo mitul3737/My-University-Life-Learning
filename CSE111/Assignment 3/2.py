@@ -1,14 +1,14 @@
 class Flower():
     def __init__(self):
-
-    def name(self,name):
+        pass
+    """def name(self,name):
         self.name=name
 
     def color(self,color):
         self.color = color
 
     def petal(self,num_of_petal):
-        self.num_of_peal = num_of_petal
+        self.num_of_peal = num_of_petal"""
 
 flower1 = Flower()
 flower1.name="Rose"
