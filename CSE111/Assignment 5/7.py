@@ -14,7 +14,7 @@ class Dolls:
         return Dolls(self.__name,self.__price)
 
    def __gt__(self, other):
-       if self.__price>other.__price:
+       if self.__price>=other.__price:
           return True
        else:
           return False

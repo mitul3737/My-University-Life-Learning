@@ -23,7 +23,7 @@ class Triangle:
         if self.__height>other.__height:
             other.__height=self.__height-other.__height
         else:
-            self.__height=other.__height-self.__height
+            other.__height=other.__height-self.__height
 
         return Triangle(self.__base,other.__height)
 
@@ -33,7 +33,7 @@ t1 = Triangle(10, 5)
 print("First Triangle Base:" , t1.getBase())
 print("First Triangle Height:" , t1.getHeight())
 print("First Triangle area:" ,t1.area())
-t2 = Triangle(5, 3)
+t2 = Triangle(3, 5)
 print("Second Triangle Base:" , t2.getBase())
 print("Second Triangle Height:" , t2.getHeight())
 print("Second Triangle area:" ,t2.area())
