@@ -4,7 +4,7 @@ class MyClass():
         self._x=x
 
     def method1(self):
-        print(self.x)
+        print(self._x)
 
     #class method
     @classmethod

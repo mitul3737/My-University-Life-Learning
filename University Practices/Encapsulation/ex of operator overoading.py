@@ -6,7 +6,7 @@ class Point:
     def __str__(self): #if asked to print string type
         return "({0},{1})".format(self.x, self.y)
 
-    def __add__(self, other): #if provided a + operator
+    def __add__(self, other): #works for + opetator
         x = self.x + self.y
         y = other.x + other.y
         return Point(x, y)
