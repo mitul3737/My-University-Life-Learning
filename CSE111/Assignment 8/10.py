@@ -19,8 +19,7 @@ class CSE(Department):
         self.semester = sem
 
     def courses(self, c1, c2, c3):
-        print("Courses Approved to this CSE student in")
-        print(f"{self.semester} semester :")
+        print(f"Courses Approved to this CSE student in {self.semester} semester :")
         print(c1)
         print(c2)
         print(c3)
@@ -33,8 +32,7 @@ class EEE(Department):
         self.semester = sem
 
     def courses(self, c1, c2, c3):
-        print("Courses Approved to this EE student in")
-        print(f"{self.semester} semester :")
+        print(f"Courses Approved to this EE student in {self.semester} semester :")
         print(c1)
         print(c2)
         print(c3)
