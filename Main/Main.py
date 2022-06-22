@@ -10,7 +10,8 @@ def method_1(a, b):
 # Calling method_1
 print(method_1(var_1, var_2))"""
 
+#Linear Array
 
-
+cir_arr=[20, None, None, 10, 20, 30, 40, 50, 10] #circular array which had starting index at 3 & size 7
 
 
