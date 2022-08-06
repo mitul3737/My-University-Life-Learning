@@ -35,7 +35,7 @@ def backwardIteration(cir, start, size):
              if k == -1:
                    k = len(cir) - 1 #set to last index 8
 
-print(backwardIteration(circular_0,3,7))
+backwardIteration(circular_0,3,7)
 
 
 #circular_0=[20, None, None, 10, 20, 30, 40, 50, 10] #circular array which had starting index at 3 & size 7
@@ -53,22 +53,7 @@ print(linearizingCircularArray(circular_0,3,7))
 circular_0 = [20, None, None, 10, 20, 30, 40, 50, 10]  # circular array which had starting index at 3 & size 7
 
 
-def resizingCircularArray(cir_arr, start, size, new_capacity):
-   # Linearized the circular array and makes [10, 20, 30, 40, 50, 10, 20, None, None, None, None, None]
-   new_arr = [None] * new_capacity
-   k = start
-   for i in range(size):
-      new_arr[i] = cir_arr[k]
-      k = (k + 1) % len(cir_arr)
 
-   """This makes [None, None, None, 10, 20, 30, 40, 50, 10, 20, None, None]"""
-   # Creating a circular array
-   list_0 = [None] * len(new_arr)
-   k = start
-   for i in new_arr:
-      list_0[k] = i
-      k = (k + 1) % len(new_arr)
-   return list_0
 
 
 print(resizingCircularArray(circular_0, 3, 7, 12))
@@ -113,6 +98,8 @@ def insert(cir_arr, start, size, elem, pos):  # pos means the index after the st
    nShifts = size - pos  # for pos 3, nshift=7-4
    fr = (start + size - 1) % len(cir_arr)  #
    to = (fr + 1) % len(cir_arr)
+
+   #right shif
    for i in range(nShifts):  # will loop for nshift times
       cir_arr[to] = cir_arr[fr]
       to = fr
@@ -188,4 +175,4 @@ def removeByRightShift(cir_arr, start, size,pos):
     size -= 1
     return cir_arr
 
-print(removeByRightShift(cir_arr,3,7,4)
+print(removeByRightShift(cir_arr,3,7,4))

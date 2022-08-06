@@ -145,7 +145,7 @@ class LinkedList:
         while temp != None:
             count += 1
             temp = temp.next
-        if idx < 0 or idx > count:
+        if idx < 0 or idx > count: #not equal
             return print("Invalid index")
 
         # Creating a node for the new element
@@ -156,11 +156,7 @@ class LinkedList:
                 new_node.next = self.head
                 self.head = new_node
             # adding in middle or last
-            elif idx < count:  # for middle values
-                pred = self.nodeAt(idx - 1)
-                new_node.next = pred.next
-                pred.next = new_node
-            else:  # to add with the last index
+            else:
                 pred = self.nodeAt(idx - 1)
                 new_node.next = pred.next
                 pred.next = new_node
@@ -174,6 +170,7 @@ class LinkedList:
         # checking if the index exists or not
         if index < 0 or index >= count:
             return None
+
         else:
             # if need to remove the first index Case 1
             if index == 0:
