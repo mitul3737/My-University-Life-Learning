@@ -1,0 +1,144 @@
+# a)
+def factorial(n):
+  if n <= 1:
+    return n
+  else:
+    return n * factorial(n-1)
+print(factorial(5))
+
+# b) 
+def fib(n):
+  if n <= 0:
+    print("Please give number greater than 0")
+  elif n == 1:
+    return 0
+  elif n == 2:
+    return 1
+  else:
+    return fib(n-1) + fib(n-2)
+print(fib(6))
+
+# c)
+def print_array(arr, index):
+  if index < len(arr):
+    print(arr[index])
+    print_array(arr, index+1)
+print_array([1,2,3,4,5], 0)
+
+# d)
+def find_power(base, pow):
+  if pow == 0:
+    return 1
+  elif pow == 1:
+    return base
+  else:
+    return base * find_power(base, pow-1)
+print(find_power(3,3))
+
+
+
+
+3)
+def hocBuilder(height):
+    
+    # if height is 0 or less, don't build a house
+    if height <= 0:
+        return 0
+    
+    # for level 1, we need 8 cards
+    if height == 1:
+        return 8
+    
+    # else, add 5 cards for current level and see previous level
+    return 5 + hocBuilder(height-1)
+
+
+
+4)
+#left triangle function
+def leftTriangle(n):
+    #base case
+    if(n==0):
+        #return
+        return
+    #recursive call til n>0
+    leftTriangle(n-1)
+    #print linegap
+    print()
+    #after recursive call print the row
+    for i  in range(n):
+        print(i+1,end=" ")
+
+#right triangle function
+def rightTriangle(n,x):
+    #base case
+    if(n==0):
+        #return
+        return
+    #recursive call til n>0
+    rightTriangle(n-1,x)
+    #print linegap
+    print()
+    #print spaces
+    for i in range(x-n):
+        print("  ",end="")
+    #print the values
+    for i  in range(n):
+        print(i+1,end=" ")
+
+        
+#now call both the functions and print them
+print("Printing the left triangle")        
+leftTriangle(5)
+print()
+print("NOw printing the right triangle")
+rightTriangle(5,5)
+
+
+5)
+class FinalQ:
+def print(self,array,idx):
+if(idx<len(array)):
+profit = self.calcProfit(array[idx])
+print(str(idx+1) + ". Investment: " + str(array[idx]) + "; Profit: " + str(profit))
+self.print(array, idx+1)
+
+def calcProfit(self,investment):
+if investment <= 25000:
+return 0.0
+else:
+val = investment - 100000
+val = val / 100
+val = val + val + val + val + val + val + val + val
+return val + 3375.0
+
+#Tester
+array = [25000,100000,250000,350000]
+f = FinalQ()
+f.print(array, 0)
+
+
+
+
+0r,
+
+class FinalQ:
+    def print(self,array,idx):
+        if(idx<len(array)):
+            profit = self.calcProfit(array[idx])
+            print(str(idx+1) + ". Investment: " + str(array[idx]) + "; Profit: " + str(profit))
+            self.print(array, idx+1)
+            
+    def calcProfit(self,investment):
+        if investment <= 25000:
+            return 0.0
+        else:
+            val = investment - 100000
+            val = val / 100
+            val = val + val + val + val + val + val + val + val
+            return val + 3375.0
+        
+#Tester
+array = [25000,100000,250000,350000]
+f = FinalQ()
+f.print(array, 0)
