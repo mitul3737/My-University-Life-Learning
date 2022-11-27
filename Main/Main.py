@@ -1,58 +1,90 @@
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+#   Created by Elshad Karimov
+#   Copyright © 2021 AppMillers. All rights reserved.
+
+from collections import defaultdict
 
 
-class BinarySearchTree:
+class Graph:
     def __init__(self):
-        self.root = None
+        self.nodes = set()
+        self.edges = defaultdict(list)
+        self.distances = {}
 
-    def insert(self, value):
-        #Creates a node
-        new_node = Node(value)
-        #Checks if the BInary Search Tree is empty or not. If empty, then adds the node there
-        if self.root is None:
-            self.root = new_node
-            return True
-        #starts working from the root to compare with the node
-        temp = self.root
-        while (True):
-            #Checks if the node that we want to insert already exists
-            if new_node.value == temp.value:
-                return False
-            #Checks if the node is smaller than the temp value
-            if new_node.value < temp.value:
-                #Checks if the left side of the temp value is empty or not
-                if temp.left is None:
-                    temp.left = new_node
-                    return True
-                #if not empty
-                temp = temp.left
-            else:
-                #Checks if the right side of the temp value is empty or not
-                if temp.right is None:
-                    temp.right = new_node
-                    return True
-                #if not empty
-                temp = temp.right
+    def addNode(self, value):
+        self.nodes.add(value)
 
-#Creating a BST
-my_tree = BinarySearchTree()
-#Inserting node 2 in the empty BST and thus the node 2 will be appointed as root & also temp value
-my_tree.insert(2)
-#First it will check if node 1 already exists or not
-#Inserting node 1 . FIrst we will check if that node 1 is less than node 2 and then it will be moved to left
-#temp.left= node 1
-#as node 2 has nothing in left , that's why it will be added to left side
-my_tree.insert(1)
-#FIrst it will check if node 3 exists or not
-#now node 3 is greater than 2 and thus temp.right will be node 3
-#as there is nothing in right side of node 2, node 3 will be added.
-my_tree.insert(3)
+    def addEdge(self, fromNode, toNode, distance):
+        self.edges[fromNode].append(toNode)
+        self.distances[(fromNode, toNode)] = distance
 
 
-print(my_tree.root.value)
-print(my_tree.root.left.value)
-print(my_tree.root.right.value)
+def dijkstra(graph, initial):
+    visited = {initial: 0}
+    path = defaultdict(list)
+
+    nodes = set(graph.nodes)
+
+    while nodes:
+        minNode = None
+        for node in nodes:
+            if node in visited:
+                if minNode is None:
+                    minNode = node
+                elif visited[node] < visited[minNode]:
+                    minNode = node
+        if minNode is None:
+            break
+
+        nodes.remove(minNode)
+        currentWeight = visited[minNode]
+
+        for edge in graph.edges[minNode]:
+            weight = currentWeight + graph.distances[(minNode, edge)]
+            if edge not in visited or weight < visited[edge]:
+                visited[edge] = weight
+                path[edge].append(minNode)
+
+    return visited, path
+
+
+customGraph = Graph()
+customGraph.addNode("A ")
+customGraph.addNode("B")
+customGraph.addNode("C")
+customGraph.addNode("D")
+customGraph.addNode("E")
+customGraph.addNode("F")
+customGraph.addNode("G")
+customGraph.addNode("H")
+customGraph.addNode("I")
+customGraph.addNode("J")
+customGraph.addNode("K")
+customGraph.addNode("L")
+customGraph.addNode("Motijheel")
+customGraph.addNode("MOGHBAZAR")
+
+customGraph.addEdge("Motijheel", "A", 3)
+customGraph.addEdge("A", "B", 4)
+customGraph.addEdge("A", "H", 6)
+customGraph.addEdge("B", "G", 2)
+customGraph.addEdge("H", "I", 5)
+customGraph.addEdge("B", "C", 7)
+customGraph.addEdge("C", "F", 7)
+customGraph.addEdge("C", "D", 3)
+customGraph.addEdge("D", "E", 1)
+customGraph.addEdge("F", "G", 2)
+customGraph.addEdge("F", "MOGHBAZAR", 4)
+customGraph.addEdge("G", "H", 3)
+customGraph.addEdge("G", "J", 1)
+customGraph.addEdge("I", "J", 7)
+customGraph.addEdge("J", "K", 6)
+customGraph.addEdge("L", "L", 4)
+customGraph.addEdge("L", "MOGHBAZAR", 7)
+customGraph.addEdge("L", "MOGHBAZAR", 2)
+
+print(dijkstra(customGraph, "MOGHBAZAR"))
+
+# See change the distance from d to e to 1 and from b to e to 6.
+# then to get to e from a ,
+# shortest path should be a b d e
+# but your code is giving a b e
