@@ -1,3 +1,1 @@
-1 
-1 2 
-1 4 3 5 
+1 2 2 3 3 1 4 Jack will work for 10 hoursJill will work for 6 hours
